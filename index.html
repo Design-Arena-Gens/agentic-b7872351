@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bbbbnj Bnnn</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #667eea;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #764ba2;
+            margin-bottom: 30px;
+        }
+
+        .content {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #667eea;
+            font-weight: bold;
+            min-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bbbbnj</h1>
+        <div class="subtitle">Bnnn</div>
+        <div class="content">
+            Welcome to your interactive web application! Click the button below to experience something special.
+        </div>
+        <button class="button" onclick="handleClick()">Click Me!</button>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        let clickCount = 0;
+        const messages = [
+            "🎉 Awesome!",
+            "🌟 You're doing great!",
+            "🚀 Keep going!",
+            "💫 Fantastic!",
+            "🎨 Beautiful!",
+            "✨ Amazing!",
+            "🎯 Perfect!",
+            "🌈 Wonderful!"
+        ];
+
+        function handleClick() {
+            clickCount++;
+            const messageDiv = document.getElementById('message');
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            messageDiv.textContent = `${randomMessage} (Click #${clickCount})`;
+
+            // Add animation
+            messageDiv.style.animation = 'none';
+            setTimeout(() => {
+                messageDiv.style.animation = 'fadeIn 0.4s ease-out';
+            }, 10);
+        }
+    </script>
+</body>
+</html>
